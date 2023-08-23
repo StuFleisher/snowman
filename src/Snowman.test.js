@@ -26,17 +26,26 @@ describe("Test the Snowman component", function () {
       words={["apple"]} />);
 
 
+    // const btn = container.querySelector("button")
 
+
+
+    fireEvent.click(container.querySelector("[value='b']"));
+    fireEvent.click(container.querySelector("[value='c']"));
+    fireEvent.click(container.querySelector("[value='d']"));
+    fireEvent.click(container.querySelector("[value='f']"));
+    fireEvent.click(container.querySelector("[value='g']"));
+    fireEvent.click(container.querySelector("[value='h']"));
     //guess wrong 6 times
-    fireEvent.click(container.querySelector("button[key='b']"));
-    fireEvent.click(container.querySelector("button[key='c']"));
-    fireEvent.click(container.querySelector("button[key='d']"));
-    fireEvent.click(container.querySelector("button[key='f']"));
-    fireEvent.click(container.querySelector("button[key='g']"));
-    fireEvent.click(container.querySelector("button[key='h']"));
+    // fireEvent.click(container.querySelector("button[key='b']"));
+    // fireEvent.click(container.querySelector("button[key='c']"));
+    // fireEvent.click(container.querySelector("button[key='d']"));
+    // fireEvent.click(container.querySelector("button[key='f']"));
+    // fireEvent.click(container.querySelector("button[key='g']"));
+    // fireEvent.click(container.querySelector("button[key='h']"));
 
-    expect(container.querySelector("button[key='b']")).not.toBeInTheDocument();
-    expect(container.quertySelector(".Button-lose")).toBeInTheDocument();
+    expect(container.querySelector("[value='b']")).not.toBeInTheDocument();
+    expect(container.querySelector(".Snowman-lose")).toBeInTheDocument();
   });
 
 
