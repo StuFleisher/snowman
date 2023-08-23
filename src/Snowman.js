@@ -34,10 +34,12 @@ function Snowman({
   const [guessedLetters, setGuessedLetters] = useState(() => new Set());
   const [answer, setAnswer] = useState((words)[0]);
 
+
   /** guessedWord: show current-state of word:
    if guessed letters are {a,p,e}, show "app_e" for "apple"
    */
   function guessedWord() {
+    //note: returns an array, not a string
     return answer
         .split("")
         .map(ltr => (guessedLetters.has(ltr) ? ltr : "_"));
@@ -76,6 +78,7 @@ function Snowman({
   return (
       <div className="Snowman">
         <img src={(images)[nWrong]} alt={nWrong} />
+        <p className="Snowman-wrong">{`Wrong Guesses: ${nWrong}`}</p>
         <p className="Snowman-word">{guessedWord()}</p>
         <p>{generateButtons()}</p>
       </div>
