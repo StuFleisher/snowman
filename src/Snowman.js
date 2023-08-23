@@ -22,6 +22,8 @@ import img6 from "./6.png";
  * - nWrong: # wrong guesses so far
  * - guessedLetters: set of guessed letters (good and bad) so far
  * - answer: selected secret word*
+ *
+ * App > Snowman
  */
 
 function Snowman({
@@ -90,9 +92,11 @@ function Snowman({
       <p className="Snowman-word">{guessedWord()}</p>
       {nWrong < maxWrong
         ?
-        <p>{generateButtons()}</p>
+          <p>{generateButtons()}</p>
         :
-        <p className="Snowman-lose">YOU LOSE! The correct word was {answer}</p>}
+          <p className="Snowman-lose">
+            YOU LOSE! The correct word was {answer}
+          </p>}
       <button onClick={restartGame}> Restart </button>
     </div>
   );

@@ -26,9 +26,12 @@ exports[`Test the Snowman component Snapshot test: loss 1`] = `
     <p
       class="Snowman-lose"
     >
-      YOU LOSE! The correct word was
+      YOU LOSE! The correct word was 
       apple
     </p>
+    <button>
+       Restart 
+    </button>
   </div>
 </div>
 `;
