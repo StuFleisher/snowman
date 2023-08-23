@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test the Snowman component Snapshot test: loss 1`] = `
+<div>
+  <div
+    class="Snowman"
+  >
+    <img
+      alt="6"
+      src="6.png"
+    />
+    <p
+      class="Snowman-wrong"
+    >
+      Wrong Guesses: 6
+    </p>
+    <p
+      class="Snowman-word"
+    >
+      _
+      _
+      _
+      _
+      _
+    </p>
+    <p
+      class="Snowman-lose"
+    >
+      YOU LOSE! The correct word was
+      apple
+    </p>
+  </div>
+</div>
+`;

@@ -11,13 +11,14 @@ import img6 from "./6.png";
 
 describe("Test the Snowman component", function () {
 
+
   test("Works without crashing", function () {
     render(<Snowman
       maxWrong="6"
       images={[img0, img1, img2, img3, img4, img5, img6]}
       words={["apple"]} />);
 
-  });
+    });
 
   test("Too many wrong guesses should lose", function () {
     const { container } = render(<Snowman
@@ -25,28 +26,35 @@ describe("Test the Snowman component", function () {
       images={[img0, img1, img2, img3, img4, img5, img6]}
       words={["apple"]} />);
 
-
-    // const btn = container.querySelector("button")
-
-
-
+      //guess wrong 6 times
     fireEvent.click(container.querySelector("[value='b']"));
     fireEvent.click(container.querySelector("[value='c']"));
     fireEvent.click(container.querySelector("[value='d']"));
     fireEvent.click(container.querySelector("[value='f']"));
     fireEvent.click(container.querySelector("[value='g']"));
     fireEvent.click(container.querySelector("[value='h']"));
-    //guess wrong 6 times
-    // fireEvent.click(container.querySelector("button[key='b']"));
-    // fireEvent.click(container.querySelector("button[key='c']"));
-    // fireEvent.click(container.querySelector("button[key='d']"));
-    // fireEvent.click(container.querySelector("button[key='f']"));
-    // fireEvent.click(container.querySelector("button[key='g']"));
-    // fireEvent.click(container.querySelector("button[key='h']"));
 
     expect(container.querySelector("[value='b']")).not.toBeInTheDocument();
     expect(container.querySelector(".Snowman-lose")).toBeInTheDocument();
+    expect(container.querySelector(".Snowman-lose")).toContainHTML("apple");
   });
 
+
+  test("Snapshot test: loss", function(){
+    const { container } = render(<Snowman
+      maxWrong="6"
+      images={[img0, img1, img2, img3, img4, img5, img6]}
+      words={["apple"]} />);
+
+      //guess wrong 6 times
+    fireEvent.click(container.querySelector("[value='b']"));
+    fireEvent.click(container.querySelector("[value='c']"));
+    fireEvent.click(container.querySelector("[value='d']"));
+    fireEvent.click(container.querySelector("[value='f']"));
+    fireEvent.click(container.querySelector("[value='g']"));
+    fireEvent.click(container.querySelector("[value='h']"));
+
+    expect(container).toMatchSnapshot();
+  })
 
 });
